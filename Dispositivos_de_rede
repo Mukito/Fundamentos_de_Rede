@@ -1,0 +1,103 @@
+Para se comunicar e manter a ordem, os dispositivos devem ser tanto identificadores quanto identificáveis ​​em uma rede. 
+De que serve se você não sabe com quem está falando no final do dia?
+
+Os dispositivos em uma rede são muito semelhantes aos humanos no fato de que temos duas maneiras de sermos identificados:
+
+Nosso nome
+Nossas impressões digitais
+Agora podemos mudar nosso nome por escritura pública, mas não podemos, no entanto, mudar nossas impressões digitais. 
+Cada ser humano tem um conjunto individual de impressões digitais, o que significa que, mesmo que mudem de nome, ainda há uma identidade por trás dele. 
+Os dispositivos têm a mesma coisa: dois meios de identificação, sendo um deles permeável. 
+
+São eles:
+Um endereço IP
+Um endereço de controle de acesso de mídia (MAC) — pense nisso como algo semelhante a um número de série.
+
+Endereços IP
+Resumidamente, um endereço IP (ou endereço de Protocolo de Internet ) pode ser usado como uma forma de identificar um host em uma rede por um período de tempo, 
+onde esse endereço IP pode então ser associado a outro dispositivo sem que o endereço IP seja alterado. 
+Primeiro, vamos dividir precisamente o que é um endereço IP no diagrama abaixo:
+
+            Octet#1    Octet#2  Octet#3  Octet#4   
+              <img 192.168.1.1>
+            0-255      0-255    0-255    0-255
+
+Um endereço IP  é um conjunto de números que são divididos em quatro octetos. 
+O valor de cada octeto será resumido como o endereço IP do dispositivo na rede. 
+Esse número é calculado por meio de uma técnica conhecida como endereçamento IP e sub-rede, mas isso é para outro dia. 
+O que é importante entender aqui é que os endereços IP podem mudar de dispositivo para dispositivo, mas não podem estar ativos simultaneamente mais de uma vez dentro da mesma rede.
+
+Endereços IP seguem um conjunto de padrões conhecidos como protocolos. 
+Esses protocolos são a espinha dorsal da rede e forçam muitos dispositivos a se comunicarem na mesma linguagem, o que é algo que abordaremos em outra ocasião. 
+No entanto, devemos lembrar que os dispositivos podem estar em uma rede privada e pública. 
+Dependendo de onde eles estão, determinará que tipo de endereço IP eles têm: um endereço IP público ou privado.
+
+Um endereço público é usado para identificar o dispositivo na Internet, enquanto um endereço privado é usado para identificar um dispositivo entre outros dispositivos. 
+Veja a tabela e a captura de tela abaixo como exemplo. Aqui temos dois dispositivos em uma rede privada:
+
+
+
+Nome do dispositivo	                  Endereço de IP	                      Tipo de endereço IP
+MESA-KJE57FD	                        192.168.1.77	                        Privado
+MESA-KJE57FD	                        86.157.52.21	                        Público
+CMNatic-PC	                          192.168.1.74	                        Privado
+CMNatic-PC	                          86.157.52.21                          Público
+
+
+https://assets.tryhackme.com/additional/cmn-aoc2020/day-8/1.png
+                  -----------------------------------------------------------------------
+                    DESKTOP-KJE57FD                  IP address:192.168.1.77(DHCP)
+                    D - 5 GHz                        MAC address:EC:5C:68:C3:7E:51
+                  -----------------------------------------------------------------------
+                    CMNatic-PC                       IP address:192.168.1.74(DHCP)
+                    D - 5 GHz                        MAC address:50:3E:AA:E8:3B:64
+
+Esses dois dispositivos poderão usar seus endereços IP privados para se comunicarem entre si. 
+No entanto, quaisquer dados enviados para a Internet de qualquer um desses dispositivos serão identificados pelo mesmo endereço IP público. 
+Endereços IP públicos são fornecidos pelo seu I nternet S ervice Provider (ou ISP ) por uma taxa mensal (sua conta!)
+
+https://assets.tryhackme.com/additional/cmn-aoc2020/day-8/2.png
+            ----------------------------------
+              My Public IPv4 is: 86.157.52.21
+                Location:ENG GB ?
+              ISP: Secure Communications TLD
+            ----------------------------------
+À medida que mais e mais dispositivos se conectam, fica cada vez mais difícil obter um endereço público que ainda não esteja em uso. 
+Por exemplo, a Cisco, uma gigante da indústria no mundo das redes, estimou que haveria aproximadamente 50 bilhões de dispositivos conectados à Internet até o final de 2021. (Cisco., 2021) . 
+Insira as versões de endereço IP. Até agora, discutimos apenas uma versão do esquema de endereçamento do Protocolo de Internet conhecido como IPv4, 
+que usa um sistema de numeração de 2^32 endereços IP (4,29 bilhões) -- então você pode ver por que há tanta escassez!
+
+IPv6 é uma nova iteração do esquema de endereçamento do Protocolo de Internet para ajudar a lidar com esse problema. Embora pareça mais assustador, ele ostenta alguns benefícios:
+      *  Suporta até 2^128 endereços IP (mais de 340 trilhões), resolvendo os problemas enfrentados com IPv4
+      *  Mais eficiente devido às novas metodologias
+
+A captura de tela abaixo compara um endereço IPv6 e IPv4.
+
+            My Ip Address is:
+            IPv6: 2a00:22c4:a531:c500:425f:cce6:c36b:f64d
+            IPv4: 86.157.52.21
+
+Endereços MAC
+
+Dispositivos em uma rede terão uma interface de rede física, que é uma placa de microchip encontrada na placa-mãe do dispositivo. 
+Esta interface de rede recebe um endereço exclusivo na fábrica em que foi construída, chamado de endereço MAC ( M edia A ccess C ontrol). 
+O endereço MAC é um número hexadecimal de doze caracteres ( um sistema de numeração de base dezesseis usado na computação para representar números ) dividido em dois e separado por dois pontos. 
+Esses dois pontos são considerados separadores. Por exemplo, a4:c3:f0:85:ac:2d . 
+Os primeiros seis caracteres representam a empresa que fez a interface de rede, e os últimos seis são um número exclusivo.
+
+          <img a4:c3:f0:85:ac:2d>
+
+No entanto, uma coisa interessante com endereços MAC é que eles podem ser falsificados ou "falsificados" em um processo conhecido como spoofing. 
+Esse spoofing ocorre quando um dispositivo em rede finge se identificar como outro usando seu endereço MAC. 
+Quando isso ocorre, muitas vezes pode quebrar projetos de segurança mal implementados que assumem que os dispositivos que falam em uma rede são confiáveis. 
+Considere o seguinte cenário: um firewall é configurado para permitir qualquer comunicação indo e vindo do endereço MAC do administrador. 
+Se um dispositivo fingisse ou "falsificasse" esse endereço MAC, o firewall agora pensaria que está recebendo comunicação do administrador quando não está.
+
+Locais como cafés, cafeterias e hotéis geralmente usam o controle de endereço MAC ao usar seu Wi-Fi "Convidado" ou "Público". 
+Essa configuração pode oferecer melhores serviços, ou seja, uma conexão mais rápida por um preço se você estiver disposto a pagar a taxa por dispositivo. 
+O laboratório interativo anexado a esta tarefa foi feito para replicar esse cenário!
+
+
+*na Visita do Site foi colocado o mesmo MAC no que não estava funcionando
+THM{YOU_GOT_ON_TRYHACKME}
+
