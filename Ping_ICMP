@@ -1,0 +1,22 @@
+Ping é uma das ferramentas de rede mais fundamentais disponíveis para nós. 
+Ping usa pacotes ICMP (Internet Control Message Protocol ) para determinar o desempenho de uma conexão entre dispositivos, por exemplo, se a conexão existe ou é confiável.
+
+O tempo gasto para pacotes ICMP viajando entre dispositivos é medido por ping, como na captura de tela abaixo. 
+Essa medição é feita usando o pacote de eco do ICMP e então a resposta de eco do ICMP do dispositivo de destino.
+
+Pings podem ser realizados em dispositivos em uma rede, como sua rede doméstica ou recursos como sites. 
+Esta ferramenta pode ser facilmente usada e vem instalada em sistemas operacionais (OSs) como Linux e Windows. 
+A sintaxe para fazer um ping simples é **ping IP address or website URL**. Vamos ver isso em ação na captura de tela abaixo.
+
+<https://assets.tryhackme.com/additional/networking-fundamentals/intro-to-networking/ping/ping1.png>
+cmnatic@CMNatic - THM-LPTOP:~$ ping 192.168.1.254
+PING 192.168.1.254 (192.168.1.254) 56(84) bytes of data.
+
+
+
+Aqui estamos fazendo ping em um dispositivo que tem o endereço privado 192.168.1.254 . 
+O ping nos informa que enviamos seis pacotes ICMP, todos recebidos com um tempo médio de 4,16 milissegundos.
+
+
+Agora você fará a mesma coisa para fazer ping no endereço de " 8.8.8.8 " no site implantável nesta tarefa. 
+Fazer ping no endereço correto revelará um sinalizador para responder à seguinte pergunta abaixo.
