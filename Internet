@@ -1,0 +1,22 @@
+Agora que aprendemos o que é uma rede e como ela é definida na computação (apenas dispositivos conectados), vamos explorar a Internet.
+
+A Internet é uma rede gigante que consiste em muitas, muitas pequenas redes dentro de si mesma. 
+Usando nosso exemplo da tarefa anterior, vamos agora imaginar que Alice fez alguns novos amigos chamados Zayn e Toby que ela quer apresentar a Bob e Jim. 
+O problema é que Alice é a única pessoa que fala a mesma língua que Zayn e Toby. Então Alice terá que ser a mensageira!
+
+Como Alice fala as duas línguas, elas podem se comunicar através dela — formando uma nova rede.
+A primeira iteração da Internet foi dentro do projeto ARPANET no final dos anos 1960. 
+Este projeto foi financiado pelo Departamento de Defesa dos Estados Unidos e foi a primeira rede documentada em ação. 
+No entanto, não foi até 1989 quando a Internet como a conhecemos foi inventada por Tim Berners-Lee pela criação da W orld W ide W eb ( WWW ). 
+Não foi até este ponto que a Internet começou a ser usada como um repositório para armazenar e compartilhar informações, assim como é hoje.
+
+Vamos relacionar a rede de amigos de Alice a dispositivos de computação. 
+A Internet parece uma versão muito maior desse tipo de diagrama:
+
+Como dito anteriormente, a Internet é composta de muitas pequenas redes todas unidas. 
+Essas pequenas redes são chamadas de redes privadas, onde as redes que conectam essas pequenas redes são chamadas de redes públicas -- ou a Internet!  
+Então, para recapitular, uma rede pode ser de dois tipos:
+
+Uma rede privada
+Uma rede pública
+Os dispositivos usarão um conjunto de rótulos para se identificar em uma rede, o que abordaremos na tarefa abaixo.
